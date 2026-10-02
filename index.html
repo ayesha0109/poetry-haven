@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Poetry Haven</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;1,400&family=Karla:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div>
+      <h1>Poetry Haven</h1>
+      <p class="tagline">A quiet place to share your poems.</p>
+    </div>
+    <div id="auth-area">
+      <span id="welcome" hidden></span>
+      <button id="open-auth" class="ghost">Log in / Sign up</button>
+      <button id="logout" class="ghost" hidden>Log out</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel" id="write">
+      <h2>Share a poem</h2>
+      <p id="login-hint" class="hint">Log in to publish your own poem.</p>
+      <form id="poem-form" hidden>
+        <label>Title <input id="title" maxlength="80" required></label>
+        <label>Poem <textarea id="content" rows="7" maxlength="2000" required></textarea></label>
+        <button type="submit">Publish</button>
+      </form>
+    </section>
+
+    <section id="poems" aria-live="polite">
+      <h2>Poems</h2>
+      <div id="poem-list"></div>
+    </section>
+  </main>
+
+  <dialog id="auth-dialog">
+    <form id="auth-form" method="dialog">
+      <h2 id="auth-title">Log in</h2>
+      <label>Username <input id="username" minlength="3" maxlength="20" required autocomplete="username"></label>
+      <label>Password <input id="password" type="password" minlength="6" required autocomplete="current-password"></label>
+      <p id="auth-error" class="error" role="alert"></p>
+      <div class="row">
+        <button type="submit" id="auth-submit">Log in</button>
+        <button type="button" id="switch-mode" class="ghost">Need an account? Sign up</button>
+        <button type="button" id="close-auth" class="ghost">Cancel</button>
+      </div>
+    </form>
+  </dialog>
+
+  <footer>Built with HTML, CSS and JavaScript. Data is stored in your browser only.</footer>
+  <script src="script.js"></script>
+</body>
+</html>

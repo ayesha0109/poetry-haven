@@ -1,0 +1,115 @@
+:root {
+  --paper: #eef0f6;
+  --card: #ffffff;
+  --ink: #1b2340;
+  --muted: #5d6685;
+  --accent: #2a4d9b;
+  --line: #d3d8e8;
+  --danger: #a3303a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Karla", system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 1rem;
+  border-bottom: 2px solid var(--ink);
+}
+
+h1 {
+  margin: 0;
+  font-family: "Newsreader", Georgia, serif;
+  font-size: clamp(2.2rem, 7vw, 3.4rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+h2 { font-family: "Newsreader", Georgia, serif; font-weight: 600; margin: 0 0 .75rem; }
+.tagline { margin: .4rem 0 0; color: var(--muted); }
+
+main, footer { max-width: 760px; margin: 0 auto; padding: 0 1.25rem; }
+main { padding-top: 1.75rem; padding-bottom: 2rem; }
+
+.panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+label { display: block; font-weight: 600; margin-bottom: .9rem; }
+input, textarea {
+  display: block;
+  width: 100%;
+  margin-top: .3rem;
+  padding: .6rem .7rem;
+  font: inherit;
+  font-weight: 400;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+textarea { font-family: "Newsreader", Georgia, serif; font-size: 1.1rem; resize: vertical; }
+
+button {
+  font: inherit;
+  font-weight: 600;
+  padding: .55rem 1.1rem;
+  color: #fff;
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover { background: #1f3b78; }
+button.ghost { color: var(--accent); background: transparent; }
+button.ghost:hover { background: #e1e6f5; }
+button.danger { color: var(--danger); border-color: var(--danger); background: transparent; padding: .2rem .6rem; font-size: .85rem; }
+
+:focus-visible { outline: 3px solid #f2b705; outline-offset: 2px; }
+
+.hint { color: var(--muted); margin: 0; }
+.error { color: var(--danger); min-height: 1.4em; margin: 0 0 .5rem; }
+.row { display: flex; flex-wrap: wrap; gap: .5rem; }
+
+.poem {
+  background: var(--card);
+  border-left: 4px solid var(--accent);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.poem h3 { margin: 0 0 .5rem; font-family: "Newsreader", Georgia, serif; font-size: 1.4rem; }
+.poem .body {
+  margin: 0;
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 1.15rem;
+  white-space: pre-wrap;
+  max-width: 60ch;
+}
+.poem .meta { display: flex; justify-content: space-between; align-items: center; margin-top: .8rem; color: var(--muted); font-size: .9rem; }
+
+dialog { border: 1px solid var(--ink); border-radius: 6px; padding: 1.5rem; width: min(92vw, 380px); }
+dialog::backdrop { background: rgba(27, 35, 64, .5); }
+
+footer { padding-bottom: 2rem; color: var(--muted); font-size: .9rem; }
+
+@media (max-width: 480px) {
+  .top { padding-top: 1.5rem; }
+}
